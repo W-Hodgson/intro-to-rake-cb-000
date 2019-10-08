@@ -10,11 +10,9 @@ namespace :greeting do
   end
 end
 
-
-
-desc 'Adds up two numbers'
-task :add_up do
-  x = 5
-  t = 84
-  puts x+t
+namespace :db do
+  desc 'migrates changes to the database'
+  task :migrate => :environment do
+    Student.create_table
+  end
 end
